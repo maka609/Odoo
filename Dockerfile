@@ -1,7 +1,5 @@
 FROM odoo:17.0
 
-# بنعرف أوودو إنه هيستخدم داتا بيز خارجية مش اللي معاه في الـ Container
-ENV ODOO_RC /etc/odoo/odoo.conf
-
-# تشغيل أوودو مع تمرير المتغيرات
-CMD ["odoo", "--db_host=$HOST", "--db_user=$USER", "--db_password=$PASSWORD", "--db_port=$PORT"]
+# بنجبر أوودو يستخدم المتغيرات اللي في Railway
+ENTRYPOINT ["odoo"]
+CMD ["--db_host=ep-hidden-darkness-anov0eb7-pooler.c-6.us-east-1.aws.neon.tech", "--db_user=neondb_owner", "--db_password=npg_c7jI2HLYqezS", "--db_port=5432"]
